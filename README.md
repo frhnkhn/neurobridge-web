@@ -84,7 +84,7 @@ NeuroBridge AI is built with **ethical AI principles**:
 ## 🚀 Live Demo
 
 🔗 **Live Website:**  
-https://yourusername.github.io/neurobridge-web/
+https://frhnkhn.github.io/neurobridge-web/
 
 > ⚠️ Note: Camera features require HTTPS (works on GitHub Pages).
 
