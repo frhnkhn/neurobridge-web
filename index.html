@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>NeuroBridge AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>NeuroBridge AI</h1>
+        <p class="subtitle">
+            A calm learning space for neurodiverse students 🧠
+        </p>
+        <p class="tagline">
+            Personalized, calm, and adaptive learning support.
+        </p>
+
+        <div class="accessibility-controls">
+            <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+            <button onclick="increaseFont()">A+</button>
+            <button onclick="decreaseFont()">A−</button>
+        </div>
+    </header>
+
+    <section class="input-section">
+        <label for="inputText">Paste your notes</label>
+
+        <textarea
+            id="inputText"
+            placeholder="Example: Photosynthesis is the process by which plants make food..."
+        ></textarea>
+
+        <label>
+            Mode:
+            <select id="mode">
+                <option value="simple">Simple Mode</option>
+                <option value="ai">AI Mode</option>
+            </select>
+        </label>
+
+        <button onclick="simplifyText()">Simplify Notes</button>
+
+        <p id="focusStatus" class="focus-status">
+            Focus status: Not started
+        </p>
+
+        <!-- MICRO BREAK UI -->
+        <div id="breakBox" class="break-box" style="display:none;">
+            <p id="breakMessage">It might help to take a short pause 🌱</p>
+            <p id="breakTimer">02:00</p>
+            <button onclick="startBreak()">Start Break</button>
+            <button onclick="skipBreak()">Skip</button>
+        </div>
+    </section>
+
+    <section class="output-section">
+        <h2>Simple Notes</h2>
+        <div id="output" class="output-box">
+            Your simplified notes will appear here 🙂
+        </div>
+    </section>
+
+    <section class="camera-section">
+        <h3>Focus Camera (On-device only)</h3>
+
+        <button id="cameraToggle" onclick="toggleCamera()">
+            Turn Camera Off
+        </button>
+
+        <video id="video" autoplay muted playsinline></video>
+        <canvas id="canvas" hidden></canvas>
+
+        <p class="camera-note">
+            Camera processing happens locally. No video is stored.
+        </p>
+    </section>
+
+    <footer>
+        <p>Built with care for Imagine Cup 2026 💙</p>
+    </footer>
+
+</div>
+
+<!-- MediaPipe -->
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_detection/face_detection.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+
+<!-- App Logic -->
+<script src="app.js"></script>
+
+</body>
+</html>
